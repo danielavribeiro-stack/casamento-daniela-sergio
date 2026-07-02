@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Casamento - Daniela & Sérgio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+/* =======================
+   BASE
+======================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#faf8f4;
+    color:#444;
+    font-family:'Cormorant Garamond', serif;
+
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    background-color:#faf8f4;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(85,107,47,0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(85,107,47,0.06) 0%, transparent 45%);
+}
+
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:auto;
+}
+
+/* =========================
+   HERO PREMIUM (CINEMATOGRÁFICA)
+========================= */
+
+.hero{
+    min-height:100vh;
+    padding-top:80px;
+    box-sizing:border-box;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    position:relative;
+
+    background-image:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url("capa.jpg");
+    background-size:cover;
+    background-position:center;
+
+    overflow:hidden;
+}
+
+/* leve sensação de zoom no fundo */
+.hero::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:inherit;
+    transform:scale(1.05);
+    z-index:-1;
+}
+
+.hero-overlay{
+    max-width:750px;
+    padding:20px;
+}
+
+.foto-noivos{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid rgba(255,255,255,0.9);
+    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+    margin-bottom:25px;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:300;
+    letter-spacing:1px;
+    font-size:84px;
+    font-weight:normal;
+    text-shadow:0 6px 20px rgba(0,0,0,0.5);
+    margin-bottom:10px;
+}
+
+.data{
+    font-size:18px;
+    letter-spacing:3px;
+    font-weight:300;
+    opacity:0.9;
+}
+
+.frase{
+    margin-top:25px;
+    font-size:22px;
+    font-style:italic;
+    opacity:0.95;
+}
+/* =======================
+   BOAS-VINDAS
+======================= */
+
+.boas-vindas{
+    background:#f5f1e8;
+    padding:80px 20px;
+    text-align:center;
+}
+
+.boas-vindas h2{
+    font-family:'Great Vibes', cursive;
+    font-size:52px;
+    color:#556B2F;
+    font-weight:300;
+}
+
+.boas-vindas p{
+    font-size:26px;
+    line-height:1.9;
+    max-width:750px;
+    margin:20px auto;
+}
+
+/* =======================
+   CONTADOR
+======================= */
+
+.contador{
+    background:white;
+    padding:80px 20px;
+    text-align:center;
+}
+
+.contador h2{
+    font-family:'Great Vibes', cursive;
+    font-size:52px;
+    color:#556B2F;
+    font-weight:300;
+}
+
+#countdown{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.tempo{
+    background:#556B2F;
+    color:white;
+    width:130px;
+    padding:25px;
+    border-radius:12px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+.tempo small{
+    margin-top:5px;
+    font-size:16px;
+    opacity:0.9;
+}
+
+.tempo span{
+    font-size:42px;
+    font-weight:bold;
+}
+
+/* =======================
+   INFO DIA
+======================= */
+
+.info-dia{
+    background:#faf8f4;
+    padding:80px 20px;
+    text-align:center;
+}
+
+.info-dia h2{
+    font-family:'Great Vibes', cursive;
+    font-size:52px;
+    color:#556B2F;
+    font-weight:300;
+}
+
+.info-blocos{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:25px;
+    margin-top:40px;
+}
+
+.info{
+    background:white;
+    padding:30px;
+    width:240px;
+    border-radius:12px;
+}
+
+.info h3{
+    font-size:30px;
+    color:#556B2F;
+    margin-bottom:15px;
+}
+
+.info p{
+    font-size:28px;
+    line-height:1.5;
+}
+
+/* =======================
+   LOCAL
+======================= */
+
+.local{
+    background:#f5f1e8;
+    padding:80px 20px;
+    text-align:center;
+}
+
+.local h2{
+    font-family:'Great Vibes', cursive;
+    font-size:52px;
+    color:#556B2F;
+    font-weight:300;
+}
+
+.endereco{
+    font-size:32px;
+    line-height:1.7;
+    margin:30px auto;
+    max-width:700px;
+}
+
+.botao-mapa{
+    display:inline-block;
+    padding:14px 28px;
+font-size:20px;
+    font-weight:600;
+    background:#556B2F;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+/* =======================
+   RSVP
+======================= */
+
+.rsvp h2{
+    font-family:'Great Vibes', cursive;
+    font-size:52px;
+    color:#556B2F;
+    font-weight:300;
+}
+
+.rsvp input{
+    padding:12px;
+    width:280px;
+    margin-top:20px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:18px;
+}
+
+.rsvp button{
+    margin-top:15px;
+    padding:12px 20px;
+    background:#556B2F;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+/* =======================
+   ANIMAÇÃO DE SCROLL
+======================= */
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.menu{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    display:flex;
+    justify-content:center;
+    gap:35px;
+
+    padding:18px 22px;
+
+    /* melhor contraste inicial */
+    background:rgba(20, 25, 18, 0.35);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+
+    border-bottom:1px solid rgba(255,255,255,0.10);
+
+    transition:.4s ease;
+    z-index:1000;
+}
+
+.menu.scrolled{
+    background:rgba(85,107,47,0.85);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+
+    border-bottom:1px solid rgba(255,255,255,0.12);
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.menu a{
+    color:white;
+    text-shadow:0 2px 10px rgba(0,0,0,0.35);
+
+    text-decoration:none;
+
+    font-size:19px;
+
+    letter-spacing:.5px;
+
+    transition:.3s;
+
+}
+
+.menu a:hover{
+
+    color:#F4E7C5;
+
+}
+
+html{
+    scroll-behavior:smooth;
+}
+section{
+    scroll-margin-top:80px;
+}
+.presentes{
+    background:#f5f1e8;
+    padding:80px 20px;
+    text-align:center;
+}
+
+.presentes h2{
+    font-family:'Great Vibes', cursive;
+    font-size:58px;
+    color:#556B2F;
+    font-weight:normal;
+    margin-bottom:10px;
+}
+
+.subtitulo{
+    font-size:24px;
+    max-width:750px;
+    margin:20px auto 40px;
+    line-height:1.8;
+    color:#444;
+}
+
+.grid-presentes{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:20px;
+    max-width:900px;
+    margin:auto;
+}
+
+.presente{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    transition:0.3s ease;
+}
+
+.presente:hover{
+    transform:translateY(-5px);
+}
+
+.presente h3{
+    color:#556B2F;
+    margin-bottom:10px;
+    font-size:26px;
+}
+
+.presente p{
+    font-size:20px;
+    line-height:1.6;
+}
+/* =========================
+   RSVP PREMIUM
+========================= */
+
+.rsvp{
+    background:#faf8f4;
+    padding:100px 20px;
+    text-align:center;
+}
+
+.subtitulo-rsvp{
+    font-size:22px;
+    margin-top:10px;
+    margin-bottom:30px;
+    color:#555;
+}
+
+.rsvp-card{
+    background:white;
+    max-width:500px;
+    margin:auto;
+    padding:40px 30px;
+    border-radius:16px;
+    box-shadow:0 12px 35px rgba(0,0,0,0.10);
+}
+
+.rsvp-card input{
+    width:100%;
+    padding:14px 16px;
+    font-size:18px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    outline:none;
+    margin-bottom:15px;
+    transition:0.3s;
+}
+
+.rsvp-card input:focus{
+    border-color:#556B2F;
+    box-shadow:0 0 0 3px rgba(85,107,47,0.15);
+}
+
+.rsvp-card button{
+    width:100%;
+    padding:14px;
+    background:#556B2F;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+    margin-top:10px;
+}
+
+.rsvp-card button:hover{
+    background:#3f4f22;
+    transform:translateY(-2px);
+}
+
+#mensagemRsvp{
+    margin-top:15px;
+    font-size:18px;
+}
+
+.texto-confirmacao{
+    font-size:18px;
+    margin-bottom:15px;
+    color:#444;
+}
+
+.botoes-rsvp{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+}
+
+.botoes-rsvp button{
+    flex:1;
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(30px) scale(0.98);
+    transition:all 1s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0) scale(1);
+}
+
+h2{
+    letter-spacing:1px;
+}
+
+.linha{
+
+    width:120px;
+
+    height:2px;
+
+    background:linear-gradient(
+        to right,
+        transparent,
+        #B79A5D,
+        transparent
+    );
+
+    margin:18px auto 40px;
+
+}
+section{
+    padding-top:100px;
+    padding-bottom:100px;
+}
+
+.hero-botao{
+
+    display:inline-block;
+    margin-top:35px;
+    padding:16px 34px;
+
+    background:#556B2F;
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:40px;
+
+    font-size:20px;
+
+    transition:.35s;
+}
+
+.hero-botao:hover{
+
+    background:#B79A5D;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+.scroll-indicator{
+
+    margin-top:45px;
+
+    font-size:32px;
+
+    animation:descer 1.8s infinite;
+
+    opacity:.8;
+
+}
+
+@keyframes descer{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(12px);
+
+}
+
+}
+.footer{
+
+    background:#556B2F;
+
+    color:white;
+
+    text-align:center;
+
+    padding:80px 20px;
+
+}
+
+.footer h2{
+
+    color:white;
+
+    font-family:'Great Vibes', cursive;
+
+    font-size:52px;
+
+    margin-bottom:15px;
+
+}
+
+.footer p{
+
+    font-size:22px;
+
+    margin:10px 0;
+
+}
+
+.footer-texto{
+
+    opacity:.85;
+
+}
+
+@media (max-width: 768px){
+
+.hero h1{
+    font-size:52px;
+}
+
+.hero{
+    padding:20px;
+}
+
+.foto-noivos{
+    width:160px;
+    height:160px;
+}
+
+.data{
+    font-size:16px;
+}
+
+.frase{
+    font-size:18px;
+}
+
+.boas-vindas p,
+.subtitulo,
+.endereco{
+    font-size:22px;
+}
+
+#countdown{
+    gap:10px;
+}
+
+.tempo{
+    width:45%;
+}
+
+.info-blocos{
+    flex-direction:column;
+    align-items:center;
+}
+
+.menu{
+    gap:18px;
+    padding:14px;
+}
+
+.menu a{
+    font-size:16px;
+}
+
+.rsvp-card{
+    width:95%;
+}
+
+}
+
+.menu-toggle{
+    position:fixed;
+    top:18px;
+    right:20px;
+    font-size:28px;
+    color:white;
+    z-index:2000;
+    cursor:pointer;
+    display:none;
+}
+
+@media (max-width:768px){
+.menu{
+    padding:12px 15px;
+    gap:18px;
+}
+
+.menu a{
+    font-size:15px;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+.menu{
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    padding-top:100px;
+
+    background:rgba(85,107,47,.98);
+    transform:translateY(-100%);
+    transition:.4s ease;
+}
+
+.menu.open{
+    transform:translateY(0);
+}
+}
+.hero-overlay > *{
+    opacity:0;
+    transform:translateY(20px);
+    animation:entrada 1s forwards;
+}
+
+.hero-overlay img{ animation-delay:0.2s; }
+.hero-overlay h1{ animation-delay:0.5s; }
+.hero-overlay .data{ animation-delay:0.8s; }
+.hero-overlay .frase{ animation-delay:1.1s; }
+.hero-overlay .hero-botao{ animation-delay:1.4s; }
+
+@keyframes entrada{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+header.hero{
+    margin-top:70px;
+}
+.hero-overlay{
+    animation: fadeHero 1.2s ease forwards;
+}
+
+@keyframes fadeHero{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="menu-toggle">☰</div>
+
+<nav class="menu" id="menu">
+    <a href="#topo">Início</a>
+    <a href="#contador">Contagem</a>
+    <a href="#local">Local</a>
+    <a href="#rsvp">RSVP</a>
+    <a href="#presentes">Presentes</a>
+</nav>
+<header class="hero" id="topo">
+
+    <div class="hero-overlay">
+
+        <img src="foto-noivos.jpg" class="foto-noivos reveal" alt="Daniela e Sérgio">
+
+        <h1 class="reveal">Daniela &amp; Sérgio</h1>
+
+        <p class="data reveal">
+            24 DE ABRIL DE 2027
+        </p>
+
+        <p class="frase reveal">
+            "O amor é paciente, o amor é bondoso.<br>
+            Tudo sofre, tudo crê, tudo espera, tudo suporta."
+        </p>
+
+        <a href="#rsvp" class="hero-botao reveal">
+            Confirmar presença
+        </a>
+
+        <div class="scroll-indicator">
+            ↓
+        </div>
+
+    </div>
+
+</header>
+
+<section class="boas-vindas reveal">
+    <div class="container">
+        <h2>Seja bem-vindo!</h2>
+
+        <p>
+            É com muita alegria que compartilhamos este momento tão especial.
+            Estamos contando os dias para celebrar nosso casamento e ficaremos muito felizes com a sua presença.
+        </p>
+
+        <p>
+            Preparamos este espaço com carinho para reunir todas as informações do nosso grande dia.
+            Esperamos que ele torne sua participação ainda mais especial.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="contador reveal" id="contador">
+    <div class="container">
+        <h2>Faltam</h2>
+<div id="countdown">
+
+    <div class="tempo">
+        <span id="dias">0</span>
+        <small>Dias</small>
+    </div>
+
+    <div class="tempo">
+        <span id="horas">0</span>
+        <small>Horas</small>
+    </div>
+
+    <div class="tempo">
+        <span id="minutos">0</span>
+        <small>Minutos</small>
+    </div>
+
+    <div class="tempo">
+        <span id="segundos">0</span>
+        <small>Segundos</small>
+    </div>
+
+</div>
+</section>
+
+<section class="info-dia reveal">
+    <div class="container">
+        <h2>Informações</h2>
+
+        <div class="info-blocos">
+            <div class="info"><h3>Data</h3><p>24/04/2027</p></div>
+            <div class="info"><h3>Horário</h3><p>16:00</p></div>
+            <div class="info"><h3>Traje</h3><p>Social elegante</p></div>
+        </div>
+
+    </div>
+</section>
+
+<section class="local reveal" id="local">
+
+<div class="container">
+
+    <h2>Local</h2>
+
+    <p class="endereco">
+        Espaço de Festas Consolatio<br>
+        Contagem - MG
+    </p>
+
+    <div class="mapa">
+        <iframe
+        src="https://www.google.com/maps?q=Espaço+de+Festas+Consolatio+Contagem+MG&output=embed"
+        width="100%"
+        height="300"
+        style="border:0; border-radius:12px;"
+        allowfullscreen="">
+        </iframe>
+    </div>
+
+    <br>
+
+    <a class="botao-mapa" target="_blank"
+    href="https://www.google.com/maps/search/?api=1&query=Espaço+de+Festas+Consolatio+Contagem+MG">
+    Abrir no Google Maps
+    </a>
+
+</div>
+
+</section>
+
+<section class="rsvp reveal" id="rsvp">
+  <div class="container">
+
+    <h2>Confirmação de Presença</h2>
+
+    <div class="linha"></div>
+
+    <p class="subtitulo-rsvp">
+        Digite seu nome para verificar sua presença na lista
+    </p>
+
+    <div class="rsvp-card">
+
+        <input type="text" id="nomeConvidado" placeholder="Seu primeiro nome">
+
+        <button onclick="verificarNome()">Verificar presença</button>
+
+        <p id="mensagemRsvp"></p>
+
+        <div id="confirmacao" style="display:none; margin-top:20px;">
+
+            <p class="texto-confirmacao">Nome encontrado na lista 💚</p>
+
+            <div class="botoes-rsvp">
+
+                <button onclick="confirmarPresenca(true)">Confirmo presença</button>
+                <button onclick="confirmarPresenca(false)">Não poderei ir</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+</section>
+
+<section class="presentes reveal" id="presentes">
+
+    <div class="container">
+
+        <h2>Lista de Presentes</h2>
+
+        <div class="linha"></div>
+
+        <p class="subtitulo">
+            Sua presença já é o nosso maior presente, mas caso queira nos presentear,
+            preparamos algumas sugestões com carinho. Porém, fique à vontade para celebrar esse momento conosco sem a obrigação de nos presentear.
+        </p>
+
+        <div class="grid-presentes">
+
+            <div class="presente">
+                <h3>Itens para Casa e Decoração</h3>
+                <p>Utensílios e detalhes para o nosso lar e pequenos toques para deixar nossa casa especial</p>
+            </div>
+
+            <div class="presente">
+                <h3>Pix</h3>
+                <p>Se preferir, você também pode nos presentear via Pix. Essa é uma opção para quem desejar contribuir de outra forma.</p>
+            </div>
+
+            </div>
+
+        </div>
+
+</section>
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="linha"></div>
+
+        <h2>Daniela & Sérgio</h2>
+
+        <p>24 de Abril de 2027</p>
+
+        <p class="footer-texto">
+            Esperamos celebrar esse momento com você.
+        </p>
+
+    </div>
+
+</footer>
+<script>
+
+/* CONTAGEM */
+const dataCasamento = new Date(2027, 3, 24, 16, 0, 0).getTime();
+
+function atualizarContagem(){
+    const agora = new Date().getTime();
+    const distancia = dataCasamento - agora;
+
+    const dias = Math.floor(distancia / (1000*60*60*24));
+    const horas = Math.floor((distancia%(1000*60*60*24))/(1000*60*60));
+    const minutos = Math.floor((distancia%(1000*60*60))/(1000*60));
+    const segundos = Math.floor((distancia%(1000*60))/1000);
+
+    document.getElementById("dias").textContent = dias;
+    document.getElementById("horas").textContent = horas;
+    document.getElementById("minutos").textContent = minutos;
+    document.getElementById("segundos").textContent = segundos;
+}
+
+setInterval(atualizarContagem,1000);
+atualizarContagem();
+
+/* LISTA */
+const listaConvidados = [
+"Daniela","Sérgio","Gabriela","Vitória","Tamires","Douglas"
+];
+
+/* RSVP */
+function verificarNome(){
+
+    const nome = document.getElementById("nomeConvidado").value.trim();
+    const msg = document.getElementById("mensagemRsvp");
+    const box = document.getElementById("confirmacao");
+
+    const ok = listaConvidados.some(n => n.toLowerCase() === nome.toLowerCase());
+
+    if(ok){
+        msg.textContent = "Nome encontrado!";
+        msg.style.color = "green";
+        box.style.display = "block";
+
+        enviarParaPlanilha(nome, "ENCONTRADO NA LISTA");
+
+    } else {
+        msg.textContent = "Nome NÃO está na lista";
+        msg.style.color = "red";
+        box.style.display = "none";
+
+        enviarParaPlanilha(nome, "NÃO LISTADO");
+    }
+}
+
+function enviarParaPlanilha(nome, status){
+
+    fetch(URL_SHEETS, {
+        method: "POST",
+        body: JSON.stringify({
+            nome: nome,
+            status: status
+        })
+    });
+}
+
+function confirmarPresenca(vai){
+
+    const msg = document.getElementById("mensagemRsvp");
+    const nome = document.getElementById("nomeConvidado").value;
+
+    if(vai){
+        msg.textContent = "Presença confirmada ❤️";
+        msg.style.color = "green";
+
+        enviarParaPlanilha(nome, "CONFIRMADO");
+
+    } else {
+        msg.textContent = "Presença recusada";
+        msg.style.color = "#666";
+
+        enviarParaPlanilha(nome, "RECUSOU");
+    }
+
+    document.getElementById("confirmacao").style.display = "none";
+}
+
+// =======================
+// ANIMAÇÃO SCROLL REVEAL
+// =======================
+
+function revelarScroll() {
+
+    const elementos = document.querySelectorAll('.reveal');
+
+    elementos.forEach(el => {
+        const posicao = el.getBoundingClientRect().top;
+        const alturaTela = window.innerHeight;
+
+        if (posicao < alturaTela - 100) {
+            el.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', revelarScroll);
+window.addEventListener('load', revelarScroll);
+
+const URL_SHEETS = "https://script.google.com/macros/s/AKfycbydvW9F72i3vLge8sn1fWGCyYwvcRmO9UiK3-TMwdC7Gdfc-_nehlDguiqHhaRI-qRN/exec";
+window.addEventListener("scroll", () => {
+
+    const menu = document.querySelector(".menu");
+
+    if(window.scrollY > 60){
+
+        menu.classList.add("scrolled");
+
+    }else{
+
+        menu.classList.remove("scrolled");
+
+    }
+
+});
+const menu = document.querySelector(".menu");
+const toggle = document.querySelector(".menu-toggle");
+
+toggle.addEventListener("click", () => {
+    menu.classList.toggle("open");
+});
+</script>
+
+</body>
+
+</html>
