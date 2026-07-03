@@ -1184,6 +1184,10 @@ window.addEventListener("scroll", () => {
 const menu = document.querySelector(".menu");
 const toggle = document.querySelector(".menu-toggle");
 
+toggle.addEventListener("click", () => {
+    menu.classList.toggle("open");
+});
+
 window.addEventListener("scroll", () => {
 
     if(window.scrollY > 60){
