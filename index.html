@@ -600,15 +600,13 @@ transform:translateY(12px);
 }
 
 .footer h2{
-
     color:white;
-
-    font-family:'Great Vibes', cursive;
-
-    font-size:52px;
-
+    font-family:'Cormorant Garamond', serif;
+    font-size:84px;
+    font-weight:300;
+    letter-spacing:1px;
+    text-shadow:0 6px 20px rgba(0,0,0,0.3);
     margin-bottom:15px;
-
 }
 
 .footer p{
@@ -763,6 +761,57 @@ header.hero{
         transform:translateY(0);
     }
 }
+/* =======================
+   MANUAL DOS CONVIDADOS
+======================= */
+
+.manual{
+    background:#faf8f4;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.manual h2{
+    font-family:'Great Vibes', cursive;
+    font-size:58px;
+    color:#556B2F;
+    font-weight:normal;
+}
+
+.manual p{
+    font-size:24px;
+    max-width:800px;
+    margin:20px auto 40px;
+    line-height:1.8;
+}
+
+.manual img{
+    width:100%;
+    max-width:700px;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.manual img:hover{
+    transform:scale(1.02);
+}
+
+.botao-download{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 30px;
+    background:#556B2F;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-size:20px;
+    transition:.3s;
+}
+
+.botao-download:hover{
+    background:#3f4f22;
+}
 </style>
 
 </head>
@@ -774,6 +823,7 @@ header.hero{
 <nav class="menu" id="menu">
     <a href="#topo">Início</a>
     <a href="#contador">Contagem</a>
+<a href="#manual">Manual dos Convidados</a>
     <a href="#local">Local</a>
     <a href="#rsvp">RSVP</a>
     <a href="#presentes">Presentes</a>
@@ -895,6 +945,33 @@ header.hero{
     </a>
 
 </div>
+
+</section>
+
+<section class="manual reveal" id="manual">
+
+    <div class="container">
+
+        <h2>Manual dos Convidados</h2>
+
+        <div class="linha"></div>
+
+        <p>
+            Preparamos um manual com algumas informações importantes para que
+            todos aproveitem o nosso grande dia da melhor forma.
+        </p>
+
+        <img src="manual-convidados.jpg" alt="Manual dos Convidados">
+
+        <br>
+
+        <a href="manual-convidados.jpg"
+           target="_blank"
+           class="botao-download">
+            Ampliar imagem
+        </a>
+
+    </div>
 
 </section>
 
