@@ -817,6 +817,39 @@ header.hero{
     --verde-claro:#7a8f4a;
     --dourado:#B79A5D;
 }
+.botao-vitrine{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 20px;
+    background:#556B2F;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-size:18px;
+    transition:.3s;
+}
+
+.botao-vitrine:hover{
+    background:#3f4f22;
+    transform:translateY(-2px);
+}
+
+.botao-pix{
+    display:inline-block;
+    margin-top:15px;
+    padding:12px 20px;
+    background:#556B2F;
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-size:18px;
+    transition:.3s;
+}
+
+.botao-pix:hover{
+    background:#3f4f22;
+    transform:translateY(-2px);
+}
 
 </style>
 
@@ -919,7 +952,7 @@ Estamos contando os dias para viver o nosso “sim” diante de Deus e das pesso
         <div class="info-blocos">
             <div class="info"><h3>Data</h3><p>24/04/2027</p></div>
             <div class="info"><h3>Horário</h3><p>16:00</p></div>
-            <div class="info"><h3>Traje</h3><p>Social elegante</p></div>
+            <div class="info"><h3>Traje</h3><p>Social Elegante</p></div>
         </div>
 
     </div>
@@ -933,7 +966,7 @@ Estamos contando os dias para viver o nosso “sim” diante de Deus e das pesso
 
     <p class="endereco">
         Espaço de Festas Consolatio<br>
-        Contagem - MG
+Rua Natal Veronez, 320 - Três Barras - Contagem - MG
     </p>
 
     <div class="mapa">
@@ -991,9 +1024,13 @@ Estamos contando os dias para viver o nosso “sim” diante de Deus e das pesso
 
     <div class="linha"></div>
 
-    <p class="subtitulo-rsvp">
-        Digite seu nome para verificar sua presença na lista
-    </p>
+  <p class="subtitulo-rsvp">
+    Digite seu primeiro nome para verificar sua presença na lista.
+    <br><br>
+    Caso não encontre seu nome, ele não faz parte da nossa lista de convidados.
+    <br><br>
+    Para melhor identificação, pedimos que digite apenas o primeiro nome, com a primeira letra maiúscula e acentuação correta.
+</p>
 
     <div class="rsvp-card">
 
@@ -1031,30 +1068,46 @@ Estamos contando os dias para viver o nosso “sim” diante de Deus e das pesso
 
         <p class="subtitulo">
             Sua presença já é o nosso maior presente, mas caso queira nos presentear,
-            preparamos algumas sugestões com carinho. Porém, fique à vontade para celebrar esse momento conosco sem a obrigação de nos presentear.
+            preparamos algumas sugestões com carinho.
         </p>
 
         <div class="grid-presentes">
 
             <div class="presente">
                 <h3>Itens para Casa e Decoração</h3>
-                <p>Utensílios e detalhes para o nosso lar e pequenos toques para deixar nossa casa especial.</p>
+                <p>
+                    Utensílios e detalhes para o nosso lar e pequenos toques para deixar nossa casa especial.
+                </p>
+
+                <!-- BOTÃO VITRINE SHOPEE (AQUI FICA BONITO E PADRÃO PIX) -->
+                <a class="botao-vitrine"
+                   href="https://collshp.com/danielavribeiro_826?share_channel_code=1&view=storefront"
+                   target="_blank">
+                   Ver vitrine na Shopee
+                </a>
+
+                <p style="margin-top:10px; font-size:16px; opacity:.85;">
+                    Se comprar pela vitrine, o envio será feito para o endereço informado na compra.
+                    Caso prefira, pode enviar para a casa da noiva (solicite o endereço via WhatsApp).
+                </p>
             </div>
 
-          <div class="presente">
-    <h3>Pix</h3>
-    <p>
-        Se preferir, você também pode nos presentear via Pix. Essa é uma opção para quem desejar contribuir de outra forma. (O valor está zerado no link, mas basta apenas copiar o código ou ler o QRCode e alterar para o valor de sua preferência.)
-    </p>
+            <div class="presente">
+                <h3>Pix</h3>
+                <p>
+                    Se preferir, você também pode nos presentear via Pix. Essa é uma opção para quem desejar contribuir de outra forma. (O valor está zerado no link, mas basta apenas copiar o código ou ler o QRCode e alterar para o valor de sua preferência.)
+                </p>
 
-    <a class="botao-pix" href="https://nubank.com.br/cobrar/12oxa1/6a47c335-6d02-4680-a3ac-61ae2b963f63" target="_blank">
-        Fazer Pix 
-    </a>
-</div>
-
+                <a class="botao-pix"
+                   href="https://nubank.com.br/cobrar/12oxa1/6a47c335-6d02-4680-a3ac-61ae2b963f63"
+                   target="_blank">
+                    Fazer Pix
+                </a>
             </div>
 
         </div>
+
+    </div>
 
 </section>
 <footer class="footer">
@@ -1074,11 +1127,6 @@ Estamos contando os dias para viver o nosso “sim” diante de Deus e das pesso
         <p class="footer-texto">
             Esperamos celebrar esse momento com você.
         </p>
-
-<p class="footer-texto">
-“Assim, eles já não são dois, mas sim uma só carne.” – Mateus 19:6
-</p>
-    </div>
 
 </footer>
 <script>
