@@ -105,10 +105,10 @@ body{
 }
 
 .data{
-    font-size:18px;
-    letter-spacing:3px;
-    font-weight:300;
-    opacity:0.9;
+    font-size:20px;
+    letter-spacing:4px;
+    font-weight:500;
+    opacity:1;
 }
 
 .frase{
@@ -341,15 +341,11 @@ font-size:20px;
 .menu a{
     color:white;
     text-shadow:0 2px 10px rgba(0,0,0,0.35);
-
     text-decoration:none;
-
-    font-size:19px;
-
-    letter-spacing:.5px;
-
+    font-size:18px;
+    letter-spacing:.8px;
+    font-weight:500;
     transition:.3s;
-
 }
 
 .menu a:hover{
@@ -388,9 +384,9 @@ section{
 
 .grid-presentes{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-    gap:20px;
-    max-width:900px;
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap:25px;
+    max-width:1100px;
     margin:auto;
 }
 
@@ -400,10 +396,15 @@ section{
     border-radius:12px;
     box-shadow:0 8px 25px rgba(0,0,0,0.08);
     transition:0.3s ease;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 }
 
 .presente:hover{
-    transform:translateY(-5px);
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
 }
 
 .presente h3{
@@ -417,7 +418,7 @@ section{
     line-height:1.6;
 }
 /* =========================
-   RSVP PREMIUM
+   CONFIRMAÇÃO DE PRESENÇA
 ========================= */
 
 .rsvp{
@@ -435,24 +436,28 @@ section{
 
 .rsvp-card{
     background:white;
-    max-width:500px;
+    max-width:600px;
     margin:auto;
-    padding:40px 30px;
-    border-radius:16px;
-    box-shadow:0 12px 35px rgba(0,0,0,0.10);
+    padding:50px;
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.95);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.08),
+        0 2px 10px rgba(0,0,0,.04);
 }
+``
 
 .rsvp-card input{
     width:100%;
-    padding:14px 16px;
-    font-size:18px;
-    border:1px solid #ddd;
-    border-radius:10px;
-    outline:none;
-    margin-bottom:15px;
-    transition:0.3s;
+    padding:18px 22px;
+    font-size:24px;
+    border:1px solid #d8d8d8;
+    border-radius:14px;
+    background:#fcfcfc;
+    transition:.3s;
 }
-
 .rsvp-card input:focus{
     border-color:#556B2F;
     box-shadow:0 0 0 3px rgba(85,107,47,0.15);
@@ -460,20 +465,37 @@ section{
 
 .rsvp-card button{
     width:100%;
-    padding:14px;
-    background:#556B2F;
-    color:white;
+    padding:18px;
     border:none;
-    border-radius:10px;
-    font-size:18px;
+    border-radius:14px;
+    background:linear-gradient(
+        135deg,
+        #556B2F,
+        #718944
+    );
+    color:white;
+    font-size:22px;
+    font-weight:500;
+    letter-spacing:.5px;
     cursor:pointer;
-    transition:0.3s;
-    margin-top:10px;
+    transition:.35s;
 }
 
+
 .rsvp-card button:hover{
-    background:#3f4f22;
-    transform:translateY(-2px);
+    transform:translateY(-3px);
+    box-shadow:0 12px 25px rgba(85,107,47,.30);
+    background:linear-gradient(
+        135deg,
+        #6b8240,
+        #556B2F
+    );
+}
+`
+
+.rsvp-icon{
+    font-size:42px;
+    margin-bottom:20px;
 }
 
 #mensagemRsvp{
@@ -685,7 +707,7 @@ transform:translateY(12px);
     top:18px;
     right:20px;
     font-size:28px;
-    color:#556B2F;
+    color:white;
     z-index:2000;
     cursor:pointer;
     display:none;
@@ -762,7 +784,7 @@ header.hero{
     }
 }
 /* =======================
-   MANUAL DOS CONVIDADOS
+   ORIENTAÇÕES
 ======================= */
 
 .manual{
@@ -812,27 +834,6 @@ header.hero{
 .botao-download:hover{
     background:#3f4f22;
 }
-:root{
-    --verde-principal:#556B2F;
-    --verde-claro:#7a8f4a;
-    --dourado:#B79A5D;
-}
-.botao-vitrine{
-    display:inline-block;
-    margin-top:15px;
-    padding:12px 20px;
-    background:#556B2F;
-    color:white;
-    text-decoration:none;
-    border-radius:10px;
-    font-size:18px;
-    transition:.3s;
-}
-
-.botao-vitrine:hover{
-    background:#3f4f22;
-    transform:translateY(-2px);
-}
 
 .botao-pix{
     display:inline-block;
@@ -851,6 +852,53 @@ header.hero{
     transform:translateY(-2px);
 }
 
+.categoria-presente{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    text-align:left;
+    display:flex;
+    flex-direction:column;
+    transition:.3s ease;
+}
+
+.categoria-presente:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+.categoria-presente h3{
+    color:#556B2F;
+    text-align:center;
+    margin-bottom:20px;
+    font-size:30px;
+}
+
+.lista-presentes{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.lista-presentes li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 0;
+    border-bottom:1px solid #eee;
+    font-size:18px;
+}
+
+.lista-presentes li:last-child{
+    border-bottom:none;
+}
+
+.valor{
+    color:#556B2F;
+    font-weight:bold;
+}
+
 </style>
 
 </head>
@@ -862,9 +910,9 @@ header.hero{
 <nav class="menu" id="menu">
     <a href="#topo">Início</a>
     <a href="#contador">Contagem Regressiva</a>
-<a href="#manual">Manual dos Convidados</a>
     <a href="#local">Local</a>
-    <a href="#rsvp">RSVP</a>
+    <a href="#manual">Orientações</a>
+    <a href="#rsvp">Confirmação de Presença</a>
     <a href="#presentes">Presentes</a>
 </nav>
 <header class="hero" id="topo">
@@ -885,7 +933,7 @@ header.hero{
 </p>
 
         <a href="#rsvp" class="hero-botao reveal">
-            Confirmar presença
+            Confirmar Presença
         </a>
 
         <div class="scroll-indicator">
@@ -899,7 +947,7 @@ header.hero{
 <section class="boas-vindas reveal">
     <div class="container">
         <h2>Seja bem-vindo(a)!</h2>
-
+<div class="linha"></div>
         <p>
             É com muita alegria que compartilhamos este momento tão especial.
             Estamos contando os dias para celebrar nosso casamento e ficaremos muito felizes com a sua presença.
@@ -920,6 +968,7 @@ Estamos contando os dias para viver o nosso “sim” diante de Deus e das pesso
 </p>
     <div class="container">
         <h2>Faltam</h2>
+<div class="linha"></div>
 <div id="countdown">
 
     <div class="tempo">
@@ -963,6 +1012,7 @@ Estamos contando os dias para viver o nosso “sim” diante de Deus e das pesso
 <div class="container">
 
     <h2>Local</h2>
+<div class="linha"></div>
 
     <p class="endereco">
         Espaço de Festas Consolatio<br>
@@ -994,16 +1044,16 @@ Rua Natal Veronez, 320 - Três Barras - Contagem - MG
 
     <div class="container">
 
-        <h2>Manual dos Convidados</h2>
+        <h2>Orientações</h2>
 
         <div class="linha"></div>
 
         <p>
-            Preparamos um manual com algumas informações importantes para que
-            todos aproveitem o nosso grande dia da melhor forma.
-        </p>
+    Preparamos algumas orientações importantes para que todos aproveitem
+    o nosso grande dia da melhor forma.
+</p>
 
-        <img src="manual-convidados.jpg" alt="Manual dos Convidados">
+        <img src="orientacoes.jpg" alt="Orientações para os Convidados">
 
         <br>
 
@@ -1032,17 +1082,31 @@ Rua Natal Veronez, 320 - Três Barras - Contagem - MG
     Para melhor identificação, pedimos que digite apenas o primeiro nome, com a primeira letra maiúscula e acentuação correta.
 </p>
 
-    <div class="rsvp-card">
 
-        <input type="text" id="nomeConvidado" placeholder="Seu primeiro nome">
+<div class="rsvp-card">
 
-        <button onclick="verificarNome()">Verificar presença</button>
+    <label for="nomeConvidado"
+       style="
+       display:block;
+       text-align:center;
+       margin-bottom:15px;
+       font-size:28px;
+       color:#556B2F;
+       font-weight:600;">
+    Seu Nome:
+</label>
+
+    <input type="text" id="nomeConvidado" placeholder="Digite aqui">
+
+    <button onclick="verificarNome()">Verificar Presença</button>
 
         <p id="mensagemRsvp"></p>
 
         <div id="confirmacao" style="display:none; margin-top:20px;">
 
-            <p class="texto-confirmacao">Nome encontrado na lista 💚</p>
+            <p class="texto-confirmacao">
+    Encontramos seu nome na lista de convidados 💚
+</p>
 
             <div class="botoes-rsvp">
 
@@ -1066,48 +1130,124 @@ Rua Natal Veronez, 320 - Três Barras - Contagem - MG
 
         <div class="linha"></div>
 
-        <p class="subtitulo">
-            Sua presença já é o nosso maior presente, mas caso queira nos presentear,
-            preparamos algumas sugestões com carinho.
-        </p>
+    <p class="subtitulo">
+    Sua presença é o nosso maior presente. ❤️
+    Mas, caso deseje nos presentear, preparamos algumas sugestões que representam itens importantes para o nosso novo lar.
+</p>
+
+<p style="
+    max-width:800px;
+    margin:0 auto 40px;
+    font-size:20px;
+    line-height:1.8;
+    color:#666;
+">
+    As sugestões abaixo representam alguns itens importantes para o nosso novo lar.
+
+    Caso prefira, você também pode nos presentear com o item físico ou realizar uma contribuição livre através do Pix.
+
+    Agradecemos de coração todo o carinho, apoio e participação neste momento tão especial de nossas vidas.
+</p>
 
         <div class="grid-presentes">
 
-            <div class="presente">
-                <h3>Itens para Casa e Decoração</h3>
-                <p>
-                    Utensílios e detalhes para o nosso lar e pequenos toques para deixar nossa casa especial.
-                </p>
+    <div class="categoria-presente">
+        <h3>🍳 Cozinha</h3>
 
-                <!-- BOTÃO VITRINE SHOPEE (AQUI FICA BONITO E PADRÃO PIX) -->
-                <a class="botao-vitrine"
-                   href="https://collshp.com/danielavribeiro_826?share_channel_code=1&view=storefront"
-                   target="_blank">
-                   Ver vitrine na Shopee
-                </a>
-
-                <p style="margin-top:10px; font-size:16px; opacity:.85;">
-                    Se comprar pela vitrine, o envio será feito para o endereço informado na compra.
-                    Caso prefira, pode enviar para a casa da noiva (solicite o endereço via WhatsApp).
-                </p>
-            </div>
-
-            <div class="presente">
-                <h3>Pix</h3>
-                <p>
-                    Se preferir, você também pode nos presentear via Pix. Essa é uma opção para quem desejar contribuir de outra forma. (O valor está zerado no link, mas basta apenas copiar o código ou ler o QRCode e alterar para o valor de sua preferência.)
-                </p>
-
-                <a class="botao-pix"
-                   href="https://nubank.com.br/cobrar/12oxa1/6a47c335-6d02-4680-a3ac-61ae2b963f63"
-                   target="_blank">
-                    Fazer Pix
-                </a>
-            </div>
-
-        </div>
-
+        <ul class="lista-presentes">
+            <li><span>Jogo de copos</span><span class="valor">R$ 40</span></li>
+            <li><span>Jogo de xícaras</span><span class="valor">R$ 50</span></li>
+            <li><span>Jarra para suco</span><span class="valor">R$ 40</span></li>
+            <li><span>Faqueiro</span><span class="valor">R$ 90</span></li>
+            <li><span>Conjunto de pratos</span><span class="valor">R$ 120</span></li>
+            <li><span>Potes herméticos</span><span class="valor">R$ 80</span></li>
+            <li><span>Porta-temperos</span><span class="valor">R$ 50</span></li>
+            <li><span>Escorredor de louças</span><span class="valor">R$ 60</span></li>
+            <li><span>Fruteira</span><span class="valor">R$ 80</span></li>
+            <li><span>Conjunto de panelas</span><span class="valor">R$ 250</span></li>
+            <li><span>Panela de pressão</span><span class="valor">R$ 120</span></li>
+        </ul>
     </div>
+
+    <div class="categoria-presente">
+        <h3>⚡ Eletrodomésticos</h3>
+
+        <ul class="lista-presentes">
+            <li><span>Sanduicheira</span><span class="valor">R$ 90</span></li>
+            <li><span>Mixer</span><span class="valor">R$ 100</span></li>
+            <li><span>Chaleira elétrica</span><span class="valor">R$ 100</span></li>
+            <li><span>Cafeteira elétrica</span><span class="valor">R$ 120</span></li>
+            <li><span>Liquidificador</span><span class="valor">R$ 140</span></li>
+            <li><span>Ferro de passar</span><span class="valor">R$ 130</span></li>
+            <li><span>Ventilador</span><span class="valor">R$ 180</span></li>
+            <li><span>Batedeira</span><span class="valor">R$ 200</span></li>
+            <li><span>Multiprocessador</span><span class="valor">R$ 250</span></li>
+            <li><span>Air Fryer</span><span class="valor">R$ 300</span></li>
+        </ul>
+    </div>
+
+    <div class="categoria-presente">
+        <h3>🛋️ Sala</h3>
+
+        <ul class="lista-presentes">
+            <li><span>Tapete para sala</span><span class="valor">R$ 180</span></li>
+            <li><span>Cortina para sala</span><span class="valor">R$ 220</span></li>
+            <li><span>Relógio de parede</span><span class="valor">R$ 80</span></li>
+            <li><span>Luminária</span><span class="valor">R$ 120</span></li>
+            <li><span>Almofadas decorativas</span><span class="valor">R$ 60</span></li>
+            <li><span>Quadros decorativos</span><span class="valor">R$ 120</span></li>
+        </ul>
+    </div>
+
+    <div class="categoria-presente">
+        <h3>🚿 Banheiro e Lavanderia</h3>
+
+        <ul class="lista-presentes">
+            <li><span>Jogo de toalhas</span><span class="valor">R$ 100</span></li>
+            <li><span>Tapete de banheiro</span><span class="valor">R$ 40</span></li>
+            <li><span>Cesto de roupas</span><span class="valor">R$ 80</span></li>
+            <li><span>Varal de chão</span><span class="valor">R$ 100</span></li>
+            <li><span>Kit lavanderia</span><span class="valor">R$ 40</span></li>
+        </ul>
+    </div>
+
+    <div class="categoria-presente">
+        <h3>🛏️ Quartos</h3>
+
+        <ul class="lista-presentes">
+            <li><span>Jogo de lençol casal</span><span class="valor">R$ 120</span></li>
+            <li><span>Cobertor casal</span><span class="valor">R$ 150</span></li>
+            <li><span>Edredom casal</span><span class="valor">R$ 220</span></li>
+            <li><span>Par de travesseiros</span><span class="valor">R$ 100</span></li>
+            <li><span>Cortina para quarto</span><span class="valor">R$ 150</span></li>
+            <li><span>Jogo de lençol solteiro</span><span class="valor">R$ 80</span></li>
+            <li><span>Edredom solteiro</span><span class="valor">R$ 120</span></li>
+            <li><span>Caixa organizadora</span><span class="valor">R$ 60</span></li>
+            <li><span>Nichos para livros</span><span class="valor">R$ 100</span></li>
+        </ul>
+    </div>
+
+<div class="presente">
+
+    <h3>💚 Pix Livre</h3>
+
+    <p>
+        Quer nos presentear de outra forma?
+
+        Disponibilizamos também a opção de contribuição livre via Pix.
+        Assim, você pode escolher o valor que desejar e participar da construção
+        do nosso novo lar de uma maneira especial. 🏡✨
+    </p>
+
+    <a class="botao-pix"
+       href="#"
+       target="_blank">
+       Contribuir via Pix
+    </a>
+
+</div>
+
+</div>
 
 </section>
 <footer class="footer">
@@ -1120,13 +1260,13 @@ Rua Natal Veronez, 320 - Três Barras - Contagem - MG
 
         <p>24 de Abril de 2027</p>
 <p class="footer-texto">
-“Assim, eles já não são dois, mas sim uma só carne.” – Mateus 19:6
+“Assim, eles já não são dois, mas uma só carne.” – Mateus 19:6
 </p>
     </div>
 
-        <p class="footer-texto">
-            Esperamos celebrar esse momento com você.
-        </p>
+       <p class="footer-texto">
+    Será uma alegria celebrar esse momento tão especial ao seu lado.
+</p>
 
 </footer>
 <script>
@@ -1157,7 +1297,7 @@ const listaConvidados = [
 "Daniela","Sérgio","Gabriela","Vitória","Tamires","Douglas"
 ];
 
-/* RSVP */
+/* CONFIRMAÇÃO DE PRESENÇA */
 function verificarNome(){
 
     const nome = document.getElementById("nomeConvidado").value.trim();
@@ -1167,14 +1307,14 @@ function verificarNome(){
     const ok = listaConvidados.some(n => n.toLowerCase() === nome.toLowerCase());
 
     if(ok){
-        msg.textContent = "Nome encontrado!";
+        msg.textContent = "Nome localizado com sucesso!";
         msg.style.color = "green";
         box.style.display = "block";
 
         enviarParaPlanilha(nome, "ENCONTRADO NA LISTA");
 
     } else {
-        msg.textContent = "Nome NÃO está na lista";
+       msg.textContent = "Não localizamos este nome em nossa lista de convidados.";
         msg.style.color = "red";
         box.style.display = "none";
 
@@ -1199,13 +1339,13 @@ function confirmarPresenca(vai){
     const nome = document.getElementById("nomeConvidado").value;
 
     if(vai){
-        msg.textContent = "Presença confirmada ❤️";
+       msg.textContent = "Presença confirmada com sucesso ❤️";
         msg.style.color = "green";
 
         enviarParaPlanilha(nome, "CONFIRMADO");
 
     } else {
-        msg.textContent = "Presença recusada";
+        msg.textContent = "Recebemos sua resposta. Sentiremos sua falta!";
         msg.style.color = "#666";
 
         enviarParaPlanilha(nome, "RECUSOU");
@@ -1241,6 +1381,15 @@ const toggle = document.querySelector(".menu-toggle");
 /* MENU MOBILE */
 toggle.addEventListener("click", () => {
     menu.classList.toggle("open");
+});
+document.querySelectorAll(".menu a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        menu.classList.remove("open");
+
+    });
+
 });
 
 /* SCROLL MENU + COR DO BOTÃO */
