@@ -170,6 +170,30 @@ body{
     box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
+.carrossel-historia{
+    max-width:900px;
+    margin:40px auto 0;
+}
+
+.indicadores{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:20px;
+}
+
+.indicadores span{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#d8d8d8;
+}
+
+.indicadores .ativo{
+    background:#556B2F;
+}
+
+
 /* =======================
    CONTADOR
 ======================= */
@@ -1018,9 +1042,18 @@ header.hero{
     Um pequeno registro do amor, da cumplicidade e dos sonhos que nos trouxeram até aqui.
 </p>
 
-<img src="prewedding1.jpg"
-class="foto-historia"
-alt="
+<div class="carrossel-historia">
+
+    <img id="fotoCarrossel"
+         src="imagens/prewedding1.jpg"
+         class="foto-historia">
+
+    <div class="indicadores">
+        <span class="ativo"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span
 
     </div>
 
