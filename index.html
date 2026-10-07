@@ -154,18 +154,41 @@ body{
     font-weight:normal;
 }
 
-.nossa-historia{
-    background:#faf8f4;
-    text-align:center;
-    padding:100px 20px;
-}
-
 .carrossel-historia{
-    max-width:800px;
+    max-width:650px;
     margin:40px auto 20px;
     overflow:hidden;
     border-radius:15px;
     box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.seta{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:10;
+
+    width:45px;
+    height:45px;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(255,255,255,.9);
+    color:#556B2F;
+
+    font-size:24px;
+    cursor:pointer;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+}
+
+.seta-esquerda{
+    left:15px;
+}
+
+.seta-direita{
+    right:15px;
 }
 
 .slider-historia{
@@ -536,7 +559,6 @@ section{
     transition:.35s;
 }
 
-
 .rsvp-card button:hover{
     transform:translateY(-3px);
     box-shadow:0 12px 25px rgba(85,107,47,.30);
@@ -699,83 +721,6 @@ transform:translateY(12px);
 
 }
 
-@media (max-width: 768px){
-
-@media (max-width:768px){
-
-    .carrossel-historia{
-        height:500px;
-    }
-
-}
-
-.hero h1{
-    font-size:52px;
-}
-
-.hero{
-    padding:20px;
-}
-
-.foto-noivos{
-    width:160px;
-    height:160px;
-}
-
-.data{
-    font-size:16px;
-}
-
-.frase{
-    font-size:18px;
-}
-
-.boas-vindas p,
-.subtitulo,
-.endereco{
-    font-size:22px;
-}
-
-#countdown{
-    gap:10px;
-}
-
-.tempo{
-    width:45%;
-}
-
-.info-blocos{
-    flex-direction:column;
-    align-items:center;
-}
-
-.menu{
-    gap:18px;
-    padding:14px;
-}
-
-.menu a{
-    font-size:16px;
-}
-
-.rsvp-card{
-    width:100%;
-    m**-width:550px;
-    margin:auto;
-  **padding:35px;
-    overflow:hidden**}
-
-.rsvp-card input{
-    width:10**;
-    max-width:100%;
-    box-siz**g:border-box;
-}
-
-.rsvp-card button{
-    width:100%;
-    box-sizing:border-box;
-}
-
 .menu-toggle{
     position:fixed;
     top:18px;
@@ -787,40 +732,7 @@ transform:translateY(12px);
     display:none;
 }
 
-.menu{
-    padding:12px 15px;
-    gap:18px;
-}
-
-.menu a{
-    font-size:15px;
-}
-
-.menu-toggle{
-    display:block;
-}
-
-.menu{
-    flex-direction:column;
-    align-items:center;
-    gap:20px;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100vh;
-    padding-top:100px;
-
-    background:rgba(85,107,47,.98);
-    transform:translateY(-100%);
-    transition:.4s ease;
-}
-
-.menu.open{
-    transform:translateY(0);
-}
-}
-.hero-overlay > *{
+.hero-overlay{
     opacity:0;
     transform:translateY(20px);
     animation:entrada 1s forwards;
@@ -975,6 +887,106 @@ header.hero{
     font-weight:bold;
 }
 
+@media (max-width: 768px){
+
+    .carrossel-historia{
+        height:500px;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+.menu{
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    padding-top:100px;
+
+    background:rgba(85,107,47,.98);
+    transform:translateY(-100%);
+    transition:.4s ease;
+}
+
+.menu.open{
+    transform:translateY(0);
+}
+
+.hero h1{
+    font-size:52px;
+}
+
+.hero{
+    padding:20px;
+}
+
+.foto-noivos{
+    width:160px;
+    height:160px;
+}
+
+.data{
+    font-size:16px;
+}
+
+.frase{
+    font-size:18px;
+}
+
+.boas-vindas p,
+.subtitulo,
+.endereco{
+    font-size:22px;
+}
+
+#countdown{
+    gap:10px;
+}
+
+.tempo{
+    width:45%;
+}
+
+.info-blocos{
+    flex-direction:column;
+    align-items:center;
+}
+
+.menu{
+    gap:18px;
+    padding:14px;
+}
+
+.menu a{
+    font-size:16px;
+}
+
+.rsvp-card{
+    width:100%;
+    max-width:550px;
+    margin:auto;
+    padding:35px;
+    overflow:hidden;
+}
+
+.rsvp-card input{
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
+}
+
+.rsvp-card button{
+    width:100%;
+    box-sizing:border-box;
+}
+
+}
+
 </style>
 
 </head>
@@ -1053,6 +1065,8 @@ header.hero{
 
        <div class="carrossel-historia">
 
+<button class="seta seta-esquerda">❮</button>
+
    <div class="slider-historia" id="sliderHistoria">
 
     <img src="imagens/prewedding1.jpg" class="foto-historia">
@@ -1079,6 +1093,8 @@ header.hero{
 <img src="imagens/prewedding22.jpg" class="foto-historia">
 
 </div>
+
+<button class="seta seta-direita">❯</button>
 
 </div>
 
@@ -1586,20 +1602,25 @@ const bolinhas = document.querySelectorAll(".indicadores span");
 
 let slideAtual = 0;
 
+const totalFotos = sliderHistoria.children.length;
+
 setInterval(() => {
 
     slideAtual++;
 
-    if(slideAtual >= sliderHistoria.children.length){
-    slideAtual = 0;
-}
+    if(slideAtual >= totalFotos){
+        slideAtual = 0;
+    }
 
     sliderHistoria.style.transform =
         `translateX(-${slideAtual * 100}%)`;
 
-    bolinhas.forEach(b => b.classList.remove("ativo"));
+    bolinhas.forEach(b =>
+        b.classList.remove("ativo")
+    );
 
-    bolinhas[slideAtual].classList.add("ativo");
+    bolinhas[slideAtual % bolinhas.length]
+        .classList.add("ativo");
 
 }, 4000);
 
