@@ -141,6 +141,35 @@ body{
     margin:20px auto;
 }
 
+.nossa-historia{
+    background:#faf8f4;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.nossa-historia h2{
+    font-family:'Great Vibes', cursive;
+    font-size:58px;
+    color:#556B2F;
+    font-weight:normal;
+}
+
+.nossa-historia{
+    background:#faf8f4;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.foto-historia{
+    width:100%;
+    max-width:800px;
+    height:auto;
+    border-radius:15px;
+    display:block;
+    margin:30px auto 0;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
 /* =======================
    CONTADOR
 ======================= */
@@ -921,6 +950,7 @@ header.hero{
 
 <nav class="menu" id="menu">
     <a href="#topo">Início</a>
+    <a href="#historia">Nossa História
     <a href="#contador">Contagem Regressiva</a>
     <a href="#local">Local</a>
     <a href="#manual">Orientações</a>
@@ -969,6 +999,28 @@ header.hero{
             Preparamos este site com carinho para reunir todas as informações do nosso grande dia.
             Esperamos que ele torne sua participação ainda mais especial.
         </p>
+
+    </div>
+
+</section>
+
+</section>
+
+<section class="nossa-historia reveal" id="historia">
+
+    <div class="container">
+
+        <h2>Nossa História</h2>
+
+        <div class="linha"></div>
+
+<p class="subtitulo">
+    Um pequeno registro do amor, da cumplicidade e dos sonhos que nos trouxeram até aqui.
+</p>
+
+<img src="prewedding1.jpg"
+class="foto-historia"
+alt="
 
     </div>
 
@@ -1284,6 +1336,9 @@ Rua Natal Veronez, 320 - Três Barras - Contagem - MG
 <script>
 
 /* CONTAGEM */
+
+const URL_SHEETS = "https://script.google.com/macros/s/AKfycbydvW9F72i3vLge8sn1fWGCyYwvcRmO9UiK3-TMwdC7Gdfc-_nehlDguiqHhaRI-qRN/exec";
+
 const dataCasamento = new Date(2027, 3, 24, 16, 0, 0).getTime();
 
 function atualizarContagem(){
@@ -1310,28 +1365,51 @@ const listaConvidados = [
 ];
 
 /* CONFIRMAÇÃO DE PRESENÇA */
-function verificarNome(){
+async function verificarNome(){
 
     const nome = document.getElementById("nomeConvidado").value.trim();
     const msg = document.getElementById("mensagemRsvp");
     const box = document.getElementById("confirmacao");
 
-    const ok = listaConvidados.some(n => n.toLowerCase() === nome.toLowerCase());
+msg.textContent = "Verificando...";
+msg.style.color = "#666";
 
-    if(ok){
-        msg.textContent = "Nome localizado com sucesso!";
-        msg.style.color = "green";
-        box.style.display = "block";
+    const ok = listaConvidados.some(
+        n => n.toLowerCase() === nome.toLowerCase()
+    );
 
-        enviarParaPlanilha(nome, "ENCONTRADO NA LISTA");
+    if(!ok){
 
-    } else {
-       msg.textContent = "Não localizamos este nome em nossa lista de convidados.";
+        msg.textContent = "Não localizamos este nome em nossa lista de convidados.";
         msg.style.color = "red";
         box.style.display = "none";
 
         enviarParaPlanilha(nome, "NÃO LISTADO");
+
+        return;
     }
+
+    const resposta = await fetch(
+        URL_SHEETS + "?nome=" + encodeURIComponent(nome)
+    );
+
+    const resultado = await resposta.text();
+
+    if(resultado === "JA_CONFIRMADO"){
+
+        msg.textContent = "Este convidado já registrou uma confirmação.";
+        msg.style.color = "#556B2F";
+        box.style.display = "none";
+
+        return;
+    }
+
+    msg.textContent = "Nome localizado. Verifique abaixo as opções de confirmação.";
+    msg.style.color = "green";
+
+    box.style.display = "block";
+
+    enviarParaPlanilha(nome, "ENCONTRADO");
 }
 
 function enviarParaPlanilha(nome, status){
@@ -1351,12 +1429,16 @@ function confirmarPresenca(vai){
     const nome = document.getElementById("nomeConvidado").value;
 
     if(vai){
-       msg.textContent = "Presença confirmada com sucesso ❤️";
-        msg.style.color = "green";
 
-        enviarParaPlanilha(nome, "CONFIRMADO");
+    window.location.href = "https://chat.whatsapp.com/L9VWS528wqx65qv6BhpoLN?s=sh&p=a&mlu=4&iam=2";
 
-    } else {
+    msg.textContent = "Presença confirmada com sucesso ❤️";
+    msg.style.color = "green";
+
+    enviarParaPlanilha(nome, "CONFIRMADO");
+
+} else {
+
         msg.textContent = "Recebemos sua resposta. Sentiremos sua falta!";
         msg.style.color = "#666";
 
