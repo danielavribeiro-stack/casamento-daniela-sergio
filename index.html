@@ -160,19 +160,22 @@ body{
     padding:100px 20px;
 }
 
-.foto-historia{
-    width:100%;
+.carrossel-historia{
     max-width:800px;
-    height:auto;
+    margin:40px auto 20px;
+    overflow:hidden;
     border-radius:15px;
-    display:block;
-    margin:30px auto 0;
     box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
-.carrossel-historia{
-    max-width:900px;
-    margin:40px auto 0;
+.slider-historia{
+    display:flex;
+    transition:transform 1s ease;
+}
+
+.foto-historia{
+    min-width:100%;
+    display:block;
 }
 
 .indicadores{
@@ -698,6 +701,14 @@ transform:translateY(12px);
 
 @media (max-width: 768px){
 
+@media (max-width:768px){
+
+    .carrossel-historia{
+        height:500px;
+    }
+
+}
+
 .hero h1{
     font-size:52px;
 }
@@ -974,7 +985,7 @@ header.hero{
 
 <nav class="menu" id="menu">
     <a href="#topo">Início</a>
-    <a href="#historia">Nossa História
+    <a href="#historia">Nossa História</a>
     <a href="#contador">Contagem Regressiva</a>
     <a href="#local">Local</a>
     <a href="#manual">Orientações</a>
@@ -1028,8 +1039,6 @@ header.hero{
 
 </section>
 
-</section>
-
 <section class="nossa-historia reveal" id="historia">
 
     <div class="container">
@@ -1038,24 +1047,50 @@ header.hero{
 
         <div class="linha"></div>
 
-<p class="subtitulo">
-    Um pequeno registro do amor, da cumplicidade e dos sonhos que nos trouxeram até aqui.
-</p>
+        <p class="subtitulo">
+            Um pequeno registro do amor, da cumplicidade e dos sonhos que nos trouxeram até aqui.
+        </p>
 
-<div class="carrossel-historia">
+       <div class="carrossel-historia">
 
-    <img id="fotoCarrossel"
-         src="imagens/prewedding1.jpg"
-         class="foto-historia">
+   <div class="slider-historia" id="sliderHistoria">
 
-    <div class="indicadores">
-        <span class="ativo"></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span
+    <img src="imagens/prewedding1.jpg" class="foto-historia">
+<img src="imagens/prewedding2.jpg" class="foto-historia">
+<img src="imagens/prewedding3.jpg" class="foto-historia">
+<img src="imagens/prewedding4.jpg" class="foto-historia">
+<img src="imagens/prewedding5.jpg" class="foto-historia">
+<img src="imagens/prewedding6.jpg" class="foto-historia">
+<img src="imagens/prewedding7.jpg" class="foto-historia">
+<img src="imagens/prewedding8.jpg" class="foto-historia">
+<img src="imagens/prewedding9.jpg" class="foto-historia">
+<img src="imagens/prewedding10.jpg" class="foto-historia">
+<img src="imagens/prewedding11.jpg" class="foto-historia">
+<img src="imagens/prewedding12.jpg" class="foto-historia">
+<img src="imagens/prewedding13.jpg" class="foto-historia">
+<img src="imagens/prewedding14.jpg" class="foto-historia">
+<img src="imagens/prewedding15.jpg" class="foto-historia">
+<img src="imagens/prewedding16.jpg" class="foto-historia">
+<img src="imagens/prewedding17.jpg" class="foto-historia">
+<img src="imagens/prewedding18.jpg" class="foto-historia">
+<img src="imagens/prewedding19.jpg" class="foto-historia">
+<img src="imagens/prewedding20.jpg" class="foto-historia">
+<img src="imagens/prewedding21.jpg" class="foto-historia">
+<img src="imagens/prewedding22.jpg" class="foto-historia">
 
-    </div>
+</div>
+
+</div>
+
+<div class="indicadores">
+    <span class="ativo"></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+</div>
 
 </section>
 
@@ -1541,6 +1576,33 @@ window.addEventListener("load", () => {
         toggle.style.color = "#556B2F";
     }
 });
+
+
+/* CARROSSEL HISTÓRIA */
+
+const sliderHistoria = document.getElementById("sliderHistoria");
+
+const bolinhas = document.querySelectorAll(".indicadores span");
+
+let slideAtual = 0;
+
+setInterval(() => {
+
+    slideAtual++;
+
+    if(slideAtual >= sliderHistoria.children.length){
+    slideAtual = 0;
+}
+
+    sliderHistoria.style.transform =
+        `translateX(-${slideAtual * 100}%)`;
+
+    bolinhas.forEach(b => b.classList.remove("ativo"));
+
+    bolinhas[slideAtual].classList.add("ativo");
+
+}, 4000);
+
 </script>
 
 </body>
