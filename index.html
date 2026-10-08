@@ -363,25 +363,6 @@ font-size:20px;
     font-weight:300;
 }
 
-.rsvp input{
-    padding:12px;
-    width:280px;
-    margin-top:20px;
-    border:1px solid #ccc;
-    border-radius:6px;
-    font-size:18px;
-}
-
-.rsvp button{
-    margin-top:15px;
-    padding:12px 20px;
-    background:#556B2F;
-    color:white;
-    border:none;
-    border-radius:6px;
-    cursor:pointer;
-}
-
 /* =======================
    ANIMAÇÃO DE SCROLL
 ======================= */
@@ -473,18 +454,16 @@ section{
     gap:25px;
     max-width:1100px;
     margin:auto;
+    align-items:start;
 }
 
 .presente{
     background:white;
-    padding:30px;
+    padding:25px;
     border-radius:12px;
     box-shadow:0 8px 25px rgba(0,0,0,0.08);
     transition:0.3s ease;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+    align-self:start;
 }
 
 .presente:hover{
@@ -848,12 +827,10 @@ header.hero{
 
 .categoria-presente{
     background:white;
-    padding:25px;
+    padding:20px;
     border-radius:12px;
     box-shadow:0 8px 25px rgba(0,0,0,.08);
     text-align:left;
-    display:flex;
-    flex-direction:column;
     transition:.3s ease;
 }
 
@@ -862,11 +839,10 @@ header.hero{
     box-shadow:0 15px 35px rgba(0,0,0,.12);
 }
 
-.categoria-presente h3{
-    color:#556B2F;
-    text-align:center;
-    margin-bottom:20px;
-    font-size:30px;
+.categoria-presente h3,
+.presente h3{
+    font-size:26px;
+    margin-bottom:15px;
 }
 
 .lista-presentes{
@@ -876,21 +852,11 @@ header.hero{
 }
 
 .lista-presentes li{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:10px 0;
-    border-bottom:1px solid #eee;
-    font-size:18px;
+    padding:5px 0;
 }
 
 .lista-presentes li:last-child{
     border-bottom:none;
-}
-
-.valor{
-    color:#556B2F;
-    font-weight:bold;
 }
 
 @media (max-width: 768px){
@@ -991,6 +957,35 @@ header.hero{
     box-sizing:border-box;
 }
 
+}
+
+#btnTopo{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+
+    width:50px;
+    height:50px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#556B2F;
+    color:white;
+
+    font-size:24px;
+    cursor:pointer;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.20);
+
+    display:none;
+
+    z-index:999;
+}
+
+#btnTopo:hover{
+    background:#3f4f22;
+    transform:translateY(-2px);
 }
 
 </style>
@@ -1155,7 +1150,7 @@ Estamos contando os dias para viver o nosso “sim” diante de Deus e das pesso
         <div class="info-blocos">
             <div class="info"><h3>Data</h3><p>24/04/2027</p></div>
             <div class="info"><h3>Horário</h3><p>16:00</p></div>
-            <div class="info"><h3>Traje</h3><p>Social Elegante</p></div>
+            <div class="info"><h3>Traje</h3><p>Casual Elegante</p></div>
         </div>
 
     </div>
@@ -1192,8 +1187,6 @@ Rua Natal Veronez, 320 - Três Barras - Contagem - MG
 
 </div>
 
-</section>
-
 <section class="manual reveal" id="manual">
 
     <div class="container">
@@ -1203,19 +1196,35 @@ Rua Natal Veronez, 320 - Três Barras - Contagem - MG
         <div class="linha"></div>
 
         <p>
-    Preparamos algumas orientações importantes para que todos aproveitem
-    o nosso grande dia da melhor forma.
-</p>
+            Para que todos possam aproveitar nosso grande dia da melhor forma,
+            preparamos algumas orientações com carinho:
+        </p>
 
-        <img src="orientacoes.jpg" alt="Orientações para os Convidados">
+        <div style="
+            max-width:800px;
+            margin:40px auto 0;
+            text-align:left;
+            font-size:24px;
+            line-height:1.8;
+        ">
 
-        <br>
+            <p>📸 Valorize o trabalho do fotógrafo e evite ficar à frente dele durante a cerimônia.</p>
 
-        <a href="orientacoes.jpg"
-           target="_blank"
-           class="botao-download">
-            Ampliar imagem
-        </a>
+            <p>💚 Participe da celebração com atenção e presença. Cada instante foi preparado com muito carinho.</p>
+
+            <p>✨ Curta a festa, aproveite cada momento e leve consigo lindas recordações desse dia.</p>
+
+            <p>👥 Nosso casamento foi planejado para um número exato de convidados. Por favor, confirme apenas o seu nome.</p>
+
+           <p>🌿 Nossos arranjos e itens decorativos são alugados. Pedimos o carinho de não remover ou levar esses itens após a celebração.</p>
+
+            <p>👔 Traje sugerido: Casual Elegante. Fique à vontade para escolher um look bonito e confortável para a ocasião. Apenas pedimos que sejam evitadas roupas esportivas, camisetas de times, bermudas e chinelos. Também pedimos, com carinho, que o branco e seus derivados sejam reservados à noiva neste dia.</p>
+
+            <p>📵 Durante a cerimônia, pedimos que mantenha o celular no modo silencioso.</p>
+
+            <p>⏰ Chegue com antecedência para não perder os momentos mais marcantes e para que a cerimônia aconteça no horário previsto.</p>
+
+        </div>
 
     </div>
 
@@ -1276,134 +1285,130 @@ Rua Natal Veronez, 320 - Três Barras - Contagem - MG
     </div>
 </section>
 
+</section>
+
 <section class="presentes reveal" id="presentes">
 
     <div class="container">
 
-        <h2>Lista de Presentes</h2>
+        <h2>Sugestões de Presentes</h2>
 
         <div class="linha"></div>
 
-    <p class="subtitulo">
-    Sua presença é o nosso maior presente. ❤️
-    Mas, caso deseje nos presentear, preparamos algumas sugestões que representam itens importantes para o nosso novo lar.
-</p>
+        <p class="subtitulo">
+            Sua presença é o nosso maior presente.
+        </p>
 
-<p style="
-    max-width:800px;
-    margin:0 auto 40px;
-    font-size:20px;
-    line-height:1.8;
-    color:#666;
-">
-    As sugestões abaixo representam alguns itens importantes para o nosso novo lar.
+        <p style="
+            max-width:800px;
+            margin:0 auto 40px;
+            font-size:20px;
+            line-height:1.8;
+            color:#666;
+        ">
+            Para quem desejar nos presentear, preparamos algumas sugestões de itens que gostaríamos de utilizar em nosso novo lar.
 
-    Caso prefira, você também pode nos presentear com o item físico ou realizar uma contribuição livre através do Pix.
+            As opções abaixo servem apenas como referência. Os convidados ficam totalmente à vontade para escolher a marca, o modelo ou um item semelhante.
 
-    Agradecemos de coração todo o carinho, apoio e participação neste momento tão especial de nossas vidas.
-</p>
+            Os presentes poderão ser entregues no dia do casamento.
+
+            Nosso lar seguirá um estilo rústico, aconchegante e atemporal, com predominância de preto, madeira natural, grafite e tons escuros. Caso deseje nos presentear com itens de decoração ou utilidades domésticas, essas referências combinam bastante com a proposta da nossa casa.
+
+            Também disponibilizamos uma opção de contribuição livre via Pix para quem preferir nos presentear dessa forma.
+        </p>
 
         <div class="grid-presentes">
 
-    <div class="categoria-presente">
-        <h3>🍳 Cozinha</h3>
+            <div class="categoria-presente">
+                <h3>🍳 Cozinha</h3>
 
-        <ul class="lista-presentes">
-            <li><span>Jogo de copos</span><span class="valor">R$ 40</span></li>
-            <li><span>Jogo de xícaras</span><span class="valor">R$ 50</span></li>
-            <li><span>Jarra para suco</span><span class="valor">R$ 40</span></li>
-            <li><span>Faqueiro</span><span class="valor">R$ 90</span></li>
-            <li><span>Conjunto de pratos</span><span class="valor">R$ 120</span></li>
-            <li><span>Potes herméticos</span><span class="valor">R$ 80</span></li>
-            <li><span>Porta-temperos</span><span class="valor">R$ 50</span></li>
-            <li><span>Escorredor de louças</span><span class="valor">R$ 60</span></li>
-            <li><span>Fruteira</span><span class="valor">R$ 80</span></li>
-            <li><span>Conjunto de panelas</span><span class="valor">R$ 250</span></li>
-            <li><span>Panela de pressão</span><span class="valor">R$ 120</span></li>
-        </ul>
+                <ul class="lista-presentes">
+                    <li>Jogo de copos</li>
+                    <li>Jogo de xícaras</li>
+                    <li>Faqueiro</li>
+                    <li>Conjunto de pratos</li>
+                    <li>Conjunto de panelas</li>
+                    <li>Panela de pressão</li>
+                </ul>
+            </div>
+
+            <div class="categoria-presente">
+                <h3>⚡ Eletrodomésticos</h3>
+
+                <ul class="lista-presentes">
+                    <li>Liquidificador</li>
+                    <li>Cafeteira elétrica</li>
+                    <li>Batedeira</li>
+                    <li>Multiprocessador</li>
+                    <li>Air Fryer</li>
+                    <li>Ventilador</li>
+                </ul>
+            </div>
+
+            <div class="categoria-presente">
+                <h3>🛋️ Sala e Decoração</h3>
+
+                <ul class="lista-presentes">
+                    <li>Tapete para sala</li>
+                    <li>Cortina para sala</li>
+                    <li>Relógio de parede</li>
+                    <li>Luminária</li>
+                    <li>Quadros decorativos</li>
+                    <li>Almofadas decorativas</li>
+                </ul>
+            </div>
+
+            <div class="categoria-presente">
+                <h3>🚿 Banheiro e Lavanderia</h3>
+
+                <ul class="lista-presentes">
+                    <li>Jogo de toalhas</li>
+                    <li>Tapete de banheiro</li>
+                    <li>Cesto de roupas</li>
+                    <li>Varal de chão</li>
+                    <li>Kit lavanderia</li>
+                </ul>
+            </div>
+
+            <div class="categoria-presente">
+                <h3>🛏️ Quartos</h3>
+
+                <ul class="lista-presentes">
+                    <li>Jogo de lençol casal</li>
+                    <li>Edredom casal</li>
+                    <li>Par de travesseiros</li>
+                    <li>Cortina para quarto</li>
+                    <li>Jogo de lençol solteiro</li>
+                    <li>Caixa organizadora</li>
+                </ul>
+            </div>
+
+            <div class="presente">
+
+                <h3>💚 Contribuição via Pix</h3>
+
+                <p>
+                    Para quem desejar nos presentear através do Pix, também disponibilizamos uma opção de contribuição livre.
+                </p>
+
+                <p style="margin-top:15px;">
+                    O código é disponibilizado sem valor preenchido. Ao abrir o link ou copiar o Pix para o aplicativo do seu banco, você poderá escolher livremente o valor que deseja contribuir.
+                </p>
+
+                <a class="botao-pix"
+                   href="https://nubank.com.br/cobrar/12oxa1/6a47c335-6d02-4680-a3ac-61ae2b963f63"
+                   target="_blank">
+                    Contribuir via Pix
+                </a>
+
+            </div>
+
+        </div>
+
     </div>
-
-    <div class="categoria-presente">
-        <h3>⚡ Eletrodomésticos</h3>
-
-        <ul class="lista-presentes">
-            <li><span>Sanduicheira</span><span class="valor">R$ 90</span></li>
-            <li><span>Mixer</span><span class="valor">R$ 100</span></li>
-            <li><span>Chaleira elétrica</span><span class="valor">R$ 100</span></li>
-            <li><span>Cafeteira elétrica</span><span class="valor">R$ 120</span></li>
-            <li><span>Liquidificador</span><span class="valor">R$ 140</span></li>
-            <li><span>Ferro de passar</span><span class="valor">R$ 130</span></li>
-            <li><span>Ventilador</span><span class="valor">R$ 180</span></li>
-            <li><span>Batedeira</span><span class="valor">R$ 200</span></li>
-            <li><span>Multiprocessador</span><span class="valor">R$ 250</span></li>
-            <li><span>Air Fryer</span><span class="valor">R$ 300</span></li>
-        </ul>
-    </div>
-
-    <div class="categoria-presente">
-        <h3>🛋️ Sala</h3>
-
-        <ul class="lista-presentes">
-            <li><span>Tapete para sala</span><span class="valor">R$ 180</span></li>
-            <li><span>Cortina para sala</span><span class="valor">R$ 220</span></li>
-            <li><span>Relógio de parede</span><span class="valor">R$ 80</span></li>
-            <li><span>Luminária</span><span class="valor">R$ 120</span></li>
-            <li><span>Almofadas decorativas</span><span class="valor">R$ 60</span></li>
-            <li><span>Quadros decorativos</span><span class="valor">R$ 120</span></li>
-        </ul>
-    </div>
-
-    <div class="categoria-presente">
-        <h3>🚿 Banheiro e Lavanderia</h3>
-
-        <ul class="lista-presentes">
-            <li><span>Jogo de toalhas</span><span class="valor">R$ 100</span></li>
-            <li><span>Tapete de banheiro</span><span class="valor">R$ 40</span></li>
-            <li><span>Cesto de roupas</span><span class="valor">R$ 80</span></li>
-            <li><span>Varal de chão</span><span class="valor">R$ 100</span></li>
-            <li><span>Kit lavanderia</span><span class="valor">R$ 40</span></li>
-        </ul>
-    </div>
-
-    <div class="categoria-presente">
-        <h3>🛏️ Quartos</h3>
-
-        <ul class="lista-presentes">
-            <li><span>Jogo de lençol casal</span><span class="valor">R$ 120</span></li>
-            <li><span>Cobertor casal</span><span class="valor">R$ 150</span></li>
-            <li><span>Edredom casal</span><span class="valor">R$ 220</span></li>
-            <li><span>Par de travesseiros</span><span class="valor">R$ 100</span></li>
-            <li><span>Cortina para quarto</span><span class="valor">R$ 150</span></li>
-            <li><span>Jogo de lençol solteiro</span><span class="valor">R$ 80</span></li>
-            <li><span>Edredom solteiro</span><span class="valor">R$ 120</span></li>
-            <li><span>Caixa organizadora</span><span class="valor">R$ 60</span></li>
-            <li><span>Nichos para livros</span><span class="valor">R$ 100</span></li>
-        </ul>
-    </div>
-
-<div class="presente">
-
-    <h3>💚 Pix Livre</h3>
-
-    <p>
-        Quer nos presentear de outra forma?
-
-        Disponibilizamos também a opção de contribuição livre via Pix.
-        Assim, você pode escolher o valor que desejar e participar da construção
-        do nosso novo lar de uma maneira especial. 🏡✨
-    </p>
-
-    <a class="botao-pix"
-       href="#"
-       target="_blank">
-       Contribuir via Pix
-    </a>
-
-</div>
-
-</div>
 
 </section>
+
 <footer class="footer">
 
     <div class="container">
@@ -1663,7 +1668,36 @@ setaEsquerda.addEventListener("click", () => {
 
 });
 
+const btnTopo = document.getElementById("btnTopo");
+
+window.addEventListener("load", () => {
+
+    const btnTopo = document.getElementById("btnTopo");
+
+    window.addEventListener("scroll", () => {
+
+        if(window.scrollY > 200){
+            btnTopo.style.display = "block";
+        } else {
+            btnTopo.style.display = "none";
+        }
+
+    });
+
+    btnTopo.addEventListener("click", () => {
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    });
+
+});
+
 </script>
+
+<button id="btnTopo">↑</button>
 
 </body>
 
