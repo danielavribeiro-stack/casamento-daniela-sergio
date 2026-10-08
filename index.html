@@ -155,7 +155,8 @@ body{
 }
 
 .carrossel-historia{
-    max-width:650px;
+    position:relative;
+    max-width:550px;
     margin:40px auto 20px;
     overflow:hidden;
     border-radius:15px;
@@ -198,6 +199,11 @@ body{
 
 .foto-historia{
     min-width:100%;
+    height:650px;
+
+    object-fit:cover;
+    object-position:center;
+
     display:block;
 }
 
@@ -1600,17 +1606,14 @@ const sliderHistoria = document.getElementById("sliderHistoria");
 
 const bolinhas = document.querySelectorAll(".indicadores span");
 
+const setaEsquerda = document.querySelector(".seta-esquerda");
+const setaDireita = document.querySelector(".seta-direita");
+
 let slideAtual = 0;
 
 const totalFotos = sliderHistoria.children.length;
 
-setInterval(() => {
-
-    slideAtual++;
-
-    if(slideAtual >= totalFotos){
-        slideAtual = 0;
-    }
+function atualizarCarrossel(){
 
     sliderHistoria.style.transform =
         `translateX(-${slideAtual * 100}%)`;
@@ -1621,8 +1624,44 @@ setInterval(() => {
 
     bolinhas[slideAtual % bolinhas.length]
         .classList.add("ativo");
+}
 
-}, 4000);
+function proximaFoto(){
+
+    slideAtual++;
+
+    if(slideAtual >= totalFotos){
+        slideAtual = 0;
+    }
+
+    atualizarCarrossel();
+}
+
+let timer = setInterval(proximaFoto, 4000);
+
+setaDireita.addEventListener("click", () => {
+
+    proximaFoto();
+
+    clearInterval(timer);
+    timer = setInterval(proximaFoto, 4000);
+
+});
+
+setaEsquerda.addEventListener("click", () => {
+
+    slideAtual--;
+
+    if(slideAtual < 0){
+        slideAtual = totalFotos - 1;
+    }
+
+    atualizarCarrossel();
+
+    clearInterval(timer);
+    timer = setInterval(proximaFoto, 4000);
+
+});
 
 </script>
 
